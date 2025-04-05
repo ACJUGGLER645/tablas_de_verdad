@@ -1,2 +1,2 @@
 # tablas_de_verdad
-Mi primer proyecto :')
+Mi primer proyecto :D
