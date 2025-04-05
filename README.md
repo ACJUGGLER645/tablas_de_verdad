@@ -9,3 +9,5 @@ Esta sera una guia para crear tablas de verdad
 | ----------- | ----------- |
 | And | & |
 | Or | Text |
+
+ELIMINAR ESTOOO!!!
