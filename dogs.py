@@ -24,6 +24,9 @@ tercer_perrito = Dogs("Negra","Criolla",12, "Negro", True)
 cuarto_perrito = Dogs("Beyota", "Pitsky", 1.5,"Negro con blanco y cafe", True)
 quinto_perrito = Dogs("Bruck","Pitsky",1.5,"Amarillo cafesoso", True)
 
-primer_perrito.cambio_de_datos("Pitbull red nose", False)
+primer_perrito.imprimir_datos_perro()
+nueva_raza = input(f"Digita la raza correcta: ")
+
+primer_perrito.cambio_de_datos(nueva_raza, False)
 
 primer_perrito.imprimir_datos_perro()
