@@ -1,16 +1,20 @@
-m = 0b111110011 # 0b111110011
-n = m >> 3
-representacion = bin(n)
-print(representacion)
+class GeneroMusical:
+    def __init__(self, genero, ritmo, armonia):
+        self.genero = genero
+        self.ritmo = ritmo
+        self.armonia = armonia
+
+    def imprimir_genero_musical(self):
+        print(f"El genero musical es {self.genero}")
+        print(f"El ritmo es {self.ritmo}")
+        print(f"La armonia es {self.armonia}")
 
 
+primer_genero_musical = GeneroMusical("Vallenato", 16, 3.2)
+segundo_genero_musical =GeneroMusical("Techno", 4, 4.24)
 
-'''x = 0o1243
-y = 0x121 
-print(m)
-print(x)
-print(y)
 
-u = bin(1996)
-print(u)'''
+primer_genero_musical.imprimir_genero_musical()
+segundo_genero_musical.imprimir_genero_musical()
 
+print(primer_genero_musical.armonia)
