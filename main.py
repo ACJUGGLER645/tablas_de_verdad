@@ -11,10 +11,12 @@ class GeneroMusical:
 
 
 primer_genero_musical = GeneroMusical("Vallenato", 16, 3.2)
-segundo_genero_musical =GeneroMusical("Techno", 4, 4.24)
+segundo_genero_musical = GeneroMusical("Techno", 4, 4.24)
 
 
 primer_genero_musical.imprimir_genero_musical()
 segundo_genero_musical.imprimir_genero_musical()
 
 print(primer_genero_musical.armonia)
+
+# crear clase de fracción / dos atributos (numerador(int), denominador(int)) metodo que imprima las fracciones 2 - 3 instancias (Modificar las fracciones metodo modificar (self. nuevo numerador, nuevo denominador)

@@ -1,6 +1,5 @@
 # tablas_de_verdad
 Mi primer proyecto :D
-
 Esta sera una guia para crear tablas de verdad 
 
 1. Comprensión sobre las tablas de verdad
@@ -18,4 +17,5 @@ Esta sera una guia para crear tablas de verdad
 |-----------|-----------|
 | Derecha | >> |
 | Izquierda | << |
-
+| 128 64 32 16 8 4 2 1 | 0 0 0 1 0 0 0 0| 
+| 21 | 0 0 0 1 0 1 0 1 |
