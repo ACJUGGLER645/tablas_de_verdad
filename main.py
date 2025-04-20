@@ -18,5 +18,3 @@ primer_genero_musical.imprimir_genero_musical()
 segundo_genero_musical.imprimir_genero_musical()
 
 print(primer_genero_musical.armonia)
-
-# crear clase de fracción / dos atributos (numerador(int), denominador(int)) metodo que imprima las fracciones 2 - 3 instancias (Modificar las fracciones metodo modificar (self. nuevo numerador, nuevo denominador)
