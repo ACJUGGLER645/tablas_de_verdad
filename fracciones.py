@@ -1,26 +1,22 @@
 class Fracciones:
-    def __init__(self, numerador = 1, denominador = 1, new_numerador = 1, new_denominador = 1):
+    def __init__(self, numerador, denominador):
         self.numerador = numerador
         self.denominador = denominador
-        self.new_numerador = new_numerador
-        self.new_denominador = new_denominador
+
+    def __str__(self): #Retorna
+        numerador = self.numerador
+        denominador = self.denominador
+        variable = f"{numerador} / {denominador}"
+        return variable
 
     def ingreso_de_datos(self):
         self.numerador = int(input("Digita el numerador: "))
         self.denominador = int(input("Digita el denominador: "))
 
-    def nuevo_ingreso_de_datos(self):
-        self.new_numerador = int(input("Digita el nuevo numerador: "))
-        self.new_denominador = int(input("Digita el nuevo denominador: "))
+    def mostrar_fracccion (self):
+        print(f"{self.numerador} / {self.denominador}")
 
-
-mi_fraccion = Fracciones()
-
-mi_fraccion.ingreso_de_datos()
-
-print(f"La fracción es: {mi_fraccion.numerador}/{mi_fraccion.denominador}")
-
-mi_fraccion.nuevo_ingreso_de_datos()
-print(f"La nueva fracción es: {mi_fraccion.new_numerador}/{mi_fraccion.new_denominador}")
-
+mi_fraccion = Fracciones(45,45)
+mi_fraccion.mostrar_fracccion()
+print(mi_fraccion)
 
