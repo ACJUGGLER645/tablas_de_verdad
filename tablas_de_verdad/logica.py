@@ -56,7 +56,7 @@ else:
 '''
 # Ejercicio 3
 
-
+'''
 lista = []
 
 print("Creemos una lista de numeros :D")
@@ -75,3 +75,37 @@ if cantidad_de_numeros > 0 and cantidad_de_numeros < 11:
         print(f"El numero {validación} no está en la lista")
 else:
     print("Digita un valor correcto")
+'''
+#Ejercicio 4
+'''
+a = 0
+texto = input("Digita una palabra y contemos sus a en ella: ").lower()
+vocal  = ["a"]
+for letra in texto:
+    if letra in vocal:
+        a+=1
+
+print(f"La cantidad de vocales a en la palabra o frase es {a}")
+'''
+#Ejercicio 5
+
+edades = []
+edad = 0
+contador = 0
+cantidad_de_edades = int(input("Ingresa cuentas edades quieres ingresar entre 1 y 5: "))
+
+if  cantidad_de_edades > 0 and cantidad_de_edades < 6:
+    for ed in range (cantidad_de_edades):
+        edad = int(input(f"Digita le edad {ed + 1}: "))
+        while edad > 120 or edad < 0:
+            print("Revisa la edad digitada")
+            edad = int(input(f"Ingresa la edad {ed+1} nuevamente: "))
+        edades.append(edad)
+    for ed in edades:
+        if ed >= 18:
+            contador += 1
+    
+    print(f"En la lista de edades {edades}, hay {contador} mayores de edad")
+
+else:
+    print("Digita un valor entre el rango mencionado")
