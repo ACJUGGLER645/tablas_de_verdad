@@ -1,7 +1,3 @@
-'''
-1. Sacar el gcd entre numerador y denominador
-2. Dividir el numerador y denominador entre el gcd
-'''
 class Fracciones:
     def __init__(self, numerador, denominador):
         mcd = gcd(numerador, denominador)
