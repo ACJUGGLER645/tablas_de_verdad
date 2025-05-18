@@ -12,60 +12,72 @@ def get_name():
         return
 
     url_api = f"https://pokeapi.co/api/v2/pokemon/{pokemon_name}"
-    respuesta = requests.get(url_api)
+    respuesta_api = requests.get(url_api)
 
-    if respuesta.status_code == 200:
-        pokemon = respuesta.json()
-        print(f"\n✅ El nombre del Pokémon ingresado es: {pokemon['name'].upper()}")
+    if respuesta_api.status_code == 200:
+        pokemon = respuesta_api.json()
+        print(f"\nEl nombre del Pokémon digitado es: {pokemon['name'].capitalize()}")
     else:
-        print(f"\n❌ No se encontró el Pokémon '{pokemon_name}'. Verifica el nombre.")
+        print(f"\nNo se encontró el Pokémon '{pokemon_name.upper()}'. Verifica el nombre.")
 
 
 def get_data():
     global pokemon
 
     if not pokemon:
-        print("❗ No se ha seleccionado un Pokémon aún.")
+        print("No se ha seleccionado un Pokémon aún.")
         return
 
     nombre = pokemon["name"]
-    species_url = f"https://pokeapi.co/api/v2/pokemon-species/{nombre}"
-    species_response = requests.get(species_url)
+    especies_url = f"https://pokeapi.co/api/v2/pokemon-species/{nombre}"
+    especies_respuesta = requests.get(especies_url)
 
-
-    generation = species_response.json()["generation"]["name"]
-    hp = next(stat["base_stat"] for stat in pokemon["stats"] if stat["stat"]["name"] == "hp")
-    altura = pokemon["height"] / 10
-    peso = pokemon["weight"] / 10
-    movimientos = []  # Creamos una lista vacía para guardar los movimientos
+    #Basic Data
+    generation = especies_respuesta.json()["generation"]["name"]
+    id_pokemon = pokemon["id"]
+    altura = pokemon["height"] / 10 #Se pasa a m está en decimetros
+    peso = pokemon["weight"] /10 #Se pasa a kg está en hectogramos
+    movimientos = []
     for i in range(3):
         movimiento = pokemon["moves"][i]["move"]["name"]
         movimientos.append(movimiento)
 
+    #Location Data
 
-    # Mostrar datos
+    location_url =  f"https://pokeapi.co/api/v2/pokemon/{nombre}/encounters"
+    location_respuesta = requests.get(location_url)
+    #location = location_respuesta.json()[0]["location_area"]["name"]
+    locations = []
+    for i in range (2):
+        location = location_respuesta.json()[i]["location_area"]["name"]
+        locations.append(location)
+    print(locations)
+
+    #print_data
+
     print(f"\n📘 Pokédex de {nombre.upper()}")
-    print(f"Generación: {generation}")
-    print(f"Salud base (HP): {hp}")
+    print(f"Numero de pokemon: {id_pokemon}")
+    print(f"Generación: {generation.capitalize()}")
     print(f"Altura: {altura} m")
     print(f"Peso: {peso} kg")
-    print("Movimientos:")
+    print("⚡Movimientos⚡:")
     for move in movimientos:
-        print(f"  - {move}")
+        print(f"  * {move}")
+    print(f"📍Zonas en donde se puede encontrar a {nombre.upper()}")
+    for location in locations:
+        print(f" * {location.capitalize()}")
 
-
+'''
 def show_data_pokemon():
     if pokemon:
-        print(f"\n🔍 Pokémon actual: {pokemon['name'].upper()}")
+        print(f"\nPokémon actual: {pokemon['name'].upper()}")
     else:
-        print("❗ No se ha seleccionado un Pokémon previamente.")
-
-
-##data()
+        print("No se haz seleccionado un Pokémon previamente")
+'''
 
 while True:
     print("\nMenu Pokedex")
-    print("1. Datos de pokemon")  
+    print("1. Ingreso nombre pokemon")  
     print("2. Ver información de pokemon")   
     print("3. Salir de la Pokedex")  
     
@@ -73,7 +85,7 @@ while True:
         opcion = int(input("\nDigita la opción: "))
     
     except ValueError:
-        print("Recuerda digitar un valor numerico: ")
+        print("Recuerda digitar un valor numerico:) ")
 
     if opcion == 1 :
         get_name()
@@ -81,8 +93,11 @@ while True:
         get_data()
     elif opcion == 3:  
         print("Nos vemos luego, se el mejor entrenador Pokemon")
+        print("Chauu")
         break
     else:
         print("Opcón no valida, intenta de nuevo")
+
+print ("Hey")
 
 

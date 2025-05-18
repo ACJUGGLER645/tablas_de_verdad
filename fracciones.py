@@ -60,7 +60,6 @@ def gcd(a, b):
         a, b = b, a % b
     return a
 
-
 while True:
     try:
         numerador = int(input("Digite el numerador: "))
