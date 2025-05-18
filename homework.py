@@ -48,7 +48,7 @@ def get_data():
     location_respuesta = requests.get(location_url)
     #location = location_respuesta.json()[0]["location_area"]["name"]
     locations = []
-    for i in range (2):
+    for i in range (3):
         location = location_respuesta.json()[i]["location_area"]["name"]
         locations.append(location)
     print(locations)
