@@ -53,7 +53,8 @@ def get_data():
         locations.append(location)
     print(locations)
 
-    #print_data
+    # metodo print_data 
+    # No van los prints dentro de los metodos
 
     print(f"\n📘 Pokédex de {nombre.upper()}")
     print(f"Numero de pokemon: {id_pokemon}")
@@ -67,13 +68,6 @@ def get_data():
     for location in locations:
         print(f" * {location.capitalize()}")
 
-'''
-def show_data_pokemon():
-    if pokemon:
-        print(f"\nPokémon actual: {pokemon['name'].upper()}")
-    else:
-        print("No se haz seleccionado un Pokémon previamente")
-'''
 
 while True:
     print("\nMenu Pokedex")
